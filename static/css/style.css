@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.nav__logo {
+    padding-left: 20px;
+}
+
+.fa {
+    font-family: FontAwesome;
+    text-decoration: none;
+    color: #000000;
+}
+
+.fa-regular {
+    font-weight: 400;
+}
+
+.fa-brands {
+    font-weight: normal;
+}
+
+.fa-solid {
+    font-weight: 900;
+}
+
+.bar:after {
+    content: '\f0c9';
+}
+
+.spring {
+    flex: 1;
+}
+
+.basket:after {
+    content: '\f291';
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.main__book {
+    min-width: 720px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.book-preview {
+    padding: 20px 20px;
+    width: 250px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.book-preview__img {
+    width: 250px;
+    height: 350px;
+    padding-bottom: 5px;
+}
+
+.book-preview__name {
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+
+.book-preview__author {
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+.book-preview-order {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #3eb5f1;
+    padding: 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.button.button--disable {
+    cursor: initial;
+    background-color: #9b9b9b;
+}
+
+.book-detail {
+    min-width: 1280px;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.book-detail-cover {
+    padding: 10px;
+}
+
+.book-detail-cover__img {
+    width: 400px;
+}
+
+.book-detail__content {
+    padding: 10px;
+}
+
+.book-detail-property {
+    color: #9b9b9b;
+    padding-bottom: 5px;
+}
+
+.book-detail-property i {
+    color: #000000;
+}
+
+.book-detail-description {
+    text-align: justify;
+}
