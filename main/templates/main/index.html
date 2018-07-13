@@ -1,44 +1,29 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Книжный магазин</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <nav class="nav">
-        <a href="#" class="nav__bar fa fa-solid bar"></a>
-        <a href="/" class="nav__logo">Книжный магазин</a>
-        <div class="spring"></div>
-        <a href="#" class="nav__basket fa fa-solid basket"></a>
-      </nav>
-    </header>
-    <main>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
       <div>
         <div class="main">
           <div class="main__book">
+            {% for book in books %}
             <div class="book-preview">
-              <img class="book-preview__img" src="/static/books/lutz.png" alt="Название книги">
-              <div class="book-preview__name">Название</div>
+              <img class="book-preview__img" src= {% static book.cover %} alt="Название книги">
+              <div class="book-preview__name">{{ book.name }}</div>
               <div class="spring"></div>
-              <div class="book-preview__author">Автор</div>
+              <div class="book-preview__author">{{ book.autor }}</div>
               <a href="/">Подробнее</a>
               <div class="spring"></div>
               <div class="book-preview-order">
-                  <div class="book-preview-order__order button">Заказать</div>
-                  <div class="book-preview-order__order button button--disable">Нет в наличии</div>
+                 {% if book.is_available == True %}
+                 <div class="book-preview-order__order button">Заказать</div>
+                 {% else %}
+                 <div class="book-preview-order__order button button--disable">Нет в наличии</div>
+                 {% endif %}
               </div>
+              <p>
             </div>
+            {% endfor %}
           </div>
         </div>
       </div>
-    </main>
-    <footer>
-      <div class="footer">
-        <a href="#" class="footer__name">Курсы по питону 2018</a>
-        <div class="spring"></div>
-        <a href="mailto:arseny.lezin@gmail.com" class="footer__mailto">arseny.lezin@gmail.com</a>
-      </div>
-    </footer>
-  </body>
-</html>
+{% endblock %}
