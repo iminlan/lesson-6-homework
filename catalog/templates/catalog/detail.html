@@ -1,45 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Книжный магазин</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <nav class="nav">
-        <a href="#" class="nav__bar fa fa-solid bar"></a>
-        <a href="/" class="nav__logo">Книжный магазин</a>
-        <div class="spring"></div>
-        <a href="#" class="nav__basket fa fa-solid basket"></a>
-      </nav>
-    </header>
-    <main>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
       <div>
         <div class="main">
           <div class="main__book">
             <div class="book-detail">
               <div class="book-detail__cover book-detail-cover">
-                <img class="book-detail-cover__img" src="/static/books/lutz.png" alt="Название книги" >
+                <img class="book-detail-cover__img" src={% static book.cover %} alt="Название книги" >
               </div>
               <div class="book-detail__content">
-                <div class="book-detail-property">Название: <i>Нащвние книги</i></div>
-                <div class="book-detail-property">Название на английском: <i>Book name</i></div>
-                <div class="book-detail-property">Автор: <i>Автор</i></div>
-                <div class="book-detail-property">Количество страниц: <i>256</i></div>
-                <div class="book-detail-property">Год выпуска: <i>2018</i></div>
-                <div class="book-detail-description">Описание книги</div>
+                <div class="book-detail-property">Название: <i>{{ book.name }}</i></div>
+                <div class="book-detail-property">Название на английском: <i>{{ book.name_eng }}</i></div>
+                <div class="book-detail-property">Автор: <i>{{ book.autor }}</i></div>
+                <div class="book-detail-property">Количество страниц: <i>{{ book.pages }}</i></div>
+                <div class="book-detail-property">Год выпуска: <i>{{ book.pub_year }}</i></div>
+                <div class="book-detail-description">{{ book.description }}</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <footer>
-      <div class="footer">
-        <a href="#" class="footer__name">Курсы по питону 2018</a>
-        <div class="spring"></div>
-        <a href="mailto:arseny.lezin@gmail.com" class="footer__mailto">arseny.lezin@gmail.com</a>
-      </div>
-    </footer>
-  </body>
-</html>
+{% endblock %}
+
